@@ -176,6 +176,121 @@
             animation: pulse 1.8s infinite
         }
 
+        .nav-resume {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.62rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--crimson2) 0%, var(--crimson) 65%, #6e1020 100%);
+            border: 1px solid var(--cyan);
+            border-radius: 2px;
+            padding: 0.4rem 0.8rem;
+            overflow: hidden;
+            transition: .25s
+        }
+
+        .nav-resume::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(23, 182, 208, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 182, 208, 0.2) 1px, transparent 1px);
+            background-size: 6px 6px;
+            mix-blend-mode: screen;
+            opacity: 0.5
+        }
+
+        .nav-resume .web-ico {
+            position: relative;
+            z-index: 1;
+            width: 12px;
+            height: 12px;
+            flex-shrink: 0
+        }
+
+        .nav-resume span {
+            position: relative;
+            z-index: 1
+        }
+
+        .nav-resume:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 1px var(--gold), 0 6px 16px -6px rgba(200, 30, 58, 0.6);
+            transform: translateY(-1px)
+        }
+
+        /* Spidey resume CTA (hero + contact) */
+        .btn-spidey,
+        .clink.spidey {
+            position: relative;
+            background: linear-gradient(135deg, var(--crimson2) 0%, var(--crimson) 55%, #6e1020 100%);
+            color: #fff !important;
+            border: 1.5px solid var(--cyan) !important;
+            overflow: hidden;
+            isolation: isolate;
+            transition: .25s
+        }
+
+        .btn-spidey::before,
+        .clink.spidey::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(23, 182, 208, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 182, 208, 0.22) 1px, transparent 1px);
+            background-size: 8px 8px;
+            mix-blend-mode: screen;
+            opacity: 0.55;
+            z-index: 0
+        }
+
+        .btn-spidey::after,
+        .clink.spidey::after {
+            content: '';
+            position: absolute;
+            top: -14px;
+            right: -14px;
+            width: 46px;
+            height: 46px;
+            background: repeating-conic-gradient(from 0deg, rgba(240, 180, 41, 0.5) 0deg 1.5deg, transparent 1.5deg 18deg);
+            clip-path: polygon(100% 0, 100% 100%, 0 0);
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 0
+        }
+
+        .btn-spidey .web-ico,
+        .clink.spidey .web-ico {
+            position: relative;
+            z-index: 1;
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+            transition: transform .3s ease
+        }
+
+        .btn-spidey span,
+        .clink.spidey span {
+            position: relative;
+            z-index: 1
+        }
+
+        .btn-spidey:hover,
+        .clink.spidey:hover {
+            border-color: var(--gold) !important;
+            box-shadow: 0 10px 26px -10px rgba(200, 30, 58, 0.65), 0 0 0 1px var(--gold);
+            transform: translateY(-2px)
+        }
+
+        .btn-spidey:hover .web-ico,
+        .clink.spidey:hover .web-ico {
+            transform: rotate(25deg) scale(1.1)
+        }
+
         @keyframes pulse {
 
             0%,
@@ -1236,7 +1351,19 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="nav-status">🕸️ Open To Work</div>
+        <div style="display:flex;align-items:center;gap:1.2rem">
+            <a href="./Shridhar_Karmalkar_Resume.pdf" class="nav-resume" download>
+                <svg class="web-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <line x1="12" y1="2" x2="12" y2="22" />
+                    <line x1="4" y1="6" x2="20" y2="18" />
+                    <line x1="4" y1="18" x2="20" y2="6" />
+                    <path d="M7 5 L17 5 L20 12 L17 19 L7 19 L4 12 Z" opacity="0.55" />
+                    <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" />
+                </svg>
+                <span>Resume</span>
+            </a>
+            <div class="nav-status">🕸️ Open To Work</div>
+        </div>
     </nav>
 
     <!-- HERO -->
@@ -1260,6 +1387,16 @@
                 </p>
                 <div class="hero-ctas">
                     <a href="#projects" class="btn btn-primary">See the work →</a>
+                    <a href="./Shridhar_Karmalkar_Resume.pdf" class="btn btn-spidey" download>
+                        <svg class="web-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                            <line x1="12" y1="2" x2="12" y2="22" />
+                            <line x1="4" y1="6" x2="20" y2="18" />
+                            <line x1="4" y1="18" x2="20" y2="6" />
+                            <path d="M7 5 L17 5 L20 12 L17 19 L7 19 L4 12 Z" opacity="0.55" />
+                            <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" />
+                        </svg>
+                        <span>Download Resume</span>
+                    </a>
                     <a href="#contact" class="btn btn-ghost">Get in touch</a>
                 </div>
                 <div class="hero-stats">
@@ -1456,7 +1593,7 @@
                 <div class="panel-top">
                     <div>
                         <div class="panel-co">
-                            <img src="./npci.svg" alt="NPCI Logo" style="width: 250px; height: auto; margin-bottom: 0.2rem;">
+                            <img src="./NPCI_logo.svg" alt="NPCI Logo" style="width: 250px; height: auto; margin-bottom: 0.2rem;">
                         </div>
                         <div class="panel-fullname">National Payments Corporation of India</div>
                         <div class="panel-role">Software Development Engineer — BHIM UPI App</div>
@@ -1603,6 +1740,16 @@
             <a class="clink" href="tel:9405285052">📞 +91 94052 85052</a>
             <a class="clink" href="https://www.linkedin.com/in/shridhar-karmalkar-7a5784147/" target="_blank">💼
                 LinkedIn</a>
+            <a class="clink spidey" href="./Shridhar_Karmalkar_Resume.pdf" download>
+                <svg class="web-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <line x1="12" y1="2" x2="12" y2="22" />
+                    <line x1="4" y1="6" x2="20" y2="18" />
+                    <line x1="4" y1="18" x2="20" y2="6" />
+                    <path d="M7 5 L17 5 L20 12 L17 19 L7 19 L4 12 Z" opacity="0.55" />
+                    <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" />
+                </svg>
+                <span>Download Resume</span>
+            </a>
         </div>
         <div class="contact-meta">React.js · Next.js · React Native — Pune, Maharashtra · Open to relocate</div>
     </section>
